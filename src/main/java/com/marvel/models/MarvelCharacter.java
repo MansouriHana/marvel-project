@@ -8,35 +8,35 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="character")
-public class Character {
+@Table(name="person")
+public class MarvelCharacter {
 	@Id
 	@Column(name="id")
-	int id;
+	long id;
 	@Column(name="name")
 	String name;
 	@Column(name="description")
 	String description;
-	@Column(name="modified_date")
-	Date modifiedDate;
-	@Column(name="image")
+	//@Column(name="modified_date")
+	//Date modifiedDate;
+	@Column(name="img")
 	String image;
 	
-	public Character() {
+	public MarvelCharacter() {
 		super();
 	}
-	public Character(int id, String name, String description, Date modifiedDate, String image) {
+	public MarvelCharacter(long id, String name, String description, String image) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.modifiedDate = modifiedDate;
+		//this.modifiedDate = modifiedDate;
 		this.image = image;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -51,12 +51,12 @@ public class Character {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getModifiedDate() {
+	/*public Date getModifiedDate() {
 		return modifiedDate;
 	}
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
-	}
+	}*/
 	public String getImage() {
 		return image;
 	}
