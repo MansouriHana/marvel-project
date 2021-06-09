@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Person } from '../model/person';
 
 @Component({
@@ -8,9 +9,14 @@ import { Person } from '../model/person';
 })
 export class CharacterComponent implements OnInit {
 @Input() person!: Person;
-  constructor() { }
+  constructor(private router:Router) { }
   
   ngOnInit(): void {
+  }
+  
+  
+  goToCharacterDetails(id:number){
+    this.router.navigate(['details', id]);
   }
 
 }

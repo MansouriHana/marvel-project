@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Person } from '../model/person';
 import { PersonService } from '../services/person.service';
@@ -12,7 +13,7 @@ export class ListPersonComponent implements OnInit {
   persons!: Observable<Person[]>;
   rows = [];
   personSize: number = -1;
-  constructor(private personService: PersonService) { }
+  constructor(private personService: PersonService,private router:Router) { }
 
   ngOnInit(): void {
     this.personService.getlistCharacter().subscribe((data) => {
@@ -24,7 +25,6 @@ export class ListPersonComponent implements OnInit {
     }, (error) => {
       console.log("error > ", error);
     });
-
   }
 
 }
