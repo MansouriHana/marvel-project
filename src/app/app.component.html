@@ -1,9 +1,18 @@
-<div class="container">    
-    <router-outlet></router-outlet>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+<div class="container" style="text-align: center; ">  
+    <div class="vertical-center-row" *ngIf="isInitState">
+        <button class="btn btn-primary" type="button" disabled *ngIf="isLoading">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
+        <button class="btn btn-primary"   type="button"  *ngIf="!isLoading" (click)="getDataFromMarvel()">
+           Click here to load data from Marvel
+        </button>
+    </div> 
+      <div *ngIf="isCharacterList">
+        <router-outlet></router-outlet>
+    </div>   
+    
+    
 </div>
+
+<!-- ng add @ng-bootstrap/ng-bootstrap -->

@@ -1,0 +1,19 @@
+img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+  #card-frame{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+  }
+  .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+h5{
+    font-size: 0.8rem;
+}

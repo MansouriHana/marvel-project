@@ -16,4 +16,7 @@ export class PersonService {
   getCharacterById(id: number): Observable<Person>{
     return this.http.get<Person>(`${this.baseUrl}/${id}`);
   }
+  getDataFromMarvel():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/storageData`);
+  }
 }

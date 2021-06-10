@@ -8,6 +8,7 @@ import { PersonService } from './services/person.service';
 import { AppRoutesModule } from './app-routes.module';
 import { PersonDetailsComponent } from './person-details/person-details.component';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({   
   declarations: [
@@ -20,7 +21,8 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     HttpClientModule,
     AppRoutesModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   providers: [PersonService],
   bootstrap: [AppComponent]

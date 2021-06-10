@@ -1,9 +1,12 @@
-<div class="py-5">
-    <div class="container">
-        <div class="row hidden-md-up" *ngFor="let row of rows" [person]="person">
-            <div class="col-md-4" *ngFor="let person of row">
-                <app-character [person]="person"></app-character>
-            </div>
-        </div><br>
+<h1>Marvel Characters</h1>
+<div class="container">
+    <div class="row hidden-md-up" *ngFor="let row of rows| slice: (page-1) * pageSize : page * pageSize"
+        [person]="person">
+        <div class="col-md-3" *ngFor="let person of row">
+            <app-character [person]="person"></app-character>
+        </div>
+    </div><br><br>
+    <div class="footer">
+        <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="rows.length"></ngb-pagination>
     </div>
 </div>

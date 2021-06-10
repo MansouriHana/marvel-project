@@ -1,6 +1,11 @@
-<div class="card" style="width: 18rem;" (click)="goToCharacterDetails(person.id)">
-    <img class="card-img-top" style="background-size: 200px 100px;" src="{{person.image}}" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{person.name}}</h5>
+<div id="card-frame">
+    <div class="card" style="width: 14rem;cursor: pointer;" (click)="goToCharacterDetails(person.id)">
+        <img class="card-img-top" style="background-size: 200px 100px;" src="{{person.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{person.name}}</h5>
+        </div>
     </div>
 </div>
+<br>
+
+

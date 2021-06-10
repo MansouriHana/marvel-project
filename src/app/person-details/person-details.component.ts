@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Person } from '../model/person';
 import { PersonService } from '../services/person.service';
       
-@Component({ 
+@Component({   
   selector: 'app-person-details',   
   templateUrl: './person-details.component.html',
   styleUrls: ['./person-details.component.css']
@@ -23,5 +23,8 @@ export class PersonDetailsComponent implements OnInit {
       console.log(JSON.stringify(data));
       this.person = data;
     }, error => console.log("Error > " + error));
+  }
+  BackToCharacterList(){
+    this.router.navigate(['characters']);
   }
 }
