@@ -32,7 +32,7 @@ public class CharacterController {
 	CharacterRepository characterRepository;
 	
 	
-	@GetMapping("/storageData")
+	@GetMapping("/characters/storageData")
 	public JSONObject getCharactersListFromApi() throws NoSuchAlgorithmException, IOException, ParseException {
 		JSONObject data_obj= marvelService.getCharactersList();
 	    JSONObject obj = (JSONObject) data_obj.get("data");
