@@ -1,17 +1,21 @@
-<div class="container" style="text-align: center; ">  
+<div class="container" style="text-align: center; "> 
+    <div id="title-marvel" *ngIf="isInitState"><h1  >Welcome to Marvel's web application</h1><br>
+    <span>{{title}}</span> </div>
     <div class="vertical-center-row" *ngIf="isInitState">
-        <button class="btn btn-primary" type="button" disabled *ngIf="isLoading">
-            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Loading...
-        </button>
-        <button class="btn btn-primary"   type="button"  *ngIf="!isLoading" (click)="getDataFromMarvel()">
-           Click here to load data from Marvel
+       
+        <div class="spinner-frame" *ngIf="isLoading && isInitState"> 
+            <div class="spinner-cover"></div> 
+            <div class="spinner-bar"></div> 
+        </div>
+        
+        <button class="btn btn-primary"   type="button"  *ngIf="!isLoading && isInitState" (click)="getDataFromMarvel()">
+          Load data
         </button>
     </div> 
       <div *ngIf="isCharacterList">
         <router-outlet></router-outlet>
     </div>   
-    
+   
     
 </div>
 

@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   isLoading: boolean = false;
   isInitState: boolean = false;
   isCharacterList: boolean = false;
+  title="Click the button below to load data from Marvel";
   constructor(private personeService: PersonService, private router: Router) {
 
   }
@@ -29,8 +30,8 @@ export class AppComponent implements OnInit {
     }, error => console.error("error => " + error));
   }
   getDataFromMarvel() {
-    console.log("getDataFromMarvel>>>>>>>>>>>>")
     this.isLoading = true;
+    this.title = "Data is loading from Marvel..."
     this.personeService.getDataFromMarvel().subscribe(data=>{
       this.isLoading = false;
       this.isInitState = false;
