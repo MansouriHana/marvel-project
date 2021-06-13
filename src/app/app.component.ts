@@ -27,7 +27,10 @@ export class AppComponent implements OnInit {
           this.isCharacterList = false;
         }
       }
-    }, error => console.error("error => " + error));
+    }, error => {
+      console.error("error => " + error);
+      this.isInitState = true;
+    });
   }
   getDataFromMarvel() {
     this.isLoading = true;
